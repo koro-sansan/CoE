@@ -510,13 +510,12 @@ def set_train_range(model, start, end):
 
 set_train_range(model, train_layer_start, train_layer_end)
 
-train = coedataset(['./coe_data/acc/hellaswag/train.json','./coe_data/acc/piqa/train.json','./coe_data/acc/winogrande/train.json','./coe_data/acc/mmlu/train.json'])
+train = coedataset(['./coe_data/acc/hellaswag/train.json','./coe_data/acc/piqa/train.json','./coe_data/acc/winogrande/train.json'])
 
 hellaswag_eval = coedataset(['./coe_data/acc/hellaswag/test.json'])
 piqa_eval = coedataset(['./coe_data/acc/piqa/test.json'])
 winogrande_eval = coedataset(['./coe_data/acc/winogrande/test.json'])
-mmlu_eval = coedataset(['./coe_data/acc/mmlu/test.json'])
-evals = {"mmlu":mmlu_eval,"hellaswag":hellaswag_eval,"piqa":piqa_eval,"winogrande":winogrande_eval}
+evals = {"hellaswag":hellaswag_eval,"piqa":piqa_eval,"winogrande":winogrande_eval}
 
 for key in evals:
     e = 0
